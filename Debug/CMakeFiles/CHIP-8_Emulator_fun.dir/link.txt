@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/CHIP-8_Emulator_fun.dir/main.cpp.o -o CHIP-8_Emulator_fun 

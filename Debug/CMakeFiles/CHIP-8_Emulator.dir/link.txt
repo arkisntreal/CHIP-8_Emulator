@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/CHIP-8_Emulator.dir/main.cpp.o CMakeFiles/CHIP-8_Emulator.dir/src/chip8.cpp.o CMakeFiles/CHIP-8_Emulator.dir/src/window.cpp.o CMakeFiles/CHIP-8_Emulator.dir/src/font.cpp.o -o CHIP-8_Emulator  /usr/lib/x86_64-linux-gnu/libSDL2main.a /usr/lib/x86_64-linux-gnu/libSDL2.so 

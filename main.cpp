@@ -10,26 +10,29 @@
 const int SCREEN_WIDTH = 512;
 const int SCREEN_HEIGHT = 256;
 
-int main(int argc, char* args[]) {
+int main(int argc, char *args[]) {
     if (SDL_Init(SDL_INIT_VIDEO) != 0)
         printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
 
     Window window("CHIP-8 Emulator", SCREEN_WIDTH, SCREEN_HEIGHT);
-    
+
     Chip8 emulator(window);
 
     emulator.initialize();
-    emulator.loadGame("/home/arc/Projects/C++/CHIP-8_Emulator/Roms/pong.rom");
+    emulator.loadGame("/home/arc/Projects/C++/CHIP-8_Emulator/roms/pong.rom");
 
     double lifetime = 0.0;
     const double TIME_STEP = 1.0 / 6000.0;
-    
+
     double accumulator = 0.0;
     double currentTime = SDL_GetTicks() * 0.001;
 
-    SDL_Event e; 
+    SDL_Event e;
+
+    //  Prelude
+
     bool running = true;
-    while (running) { 
+    while (running) {
         float newTime = SDL_GetTicks() * 0.001;
         float frameTime = newTime - currentTime;
         currentTime = newTime;
@@ -46,20 +49,23 @@ int main(int argc, char* args[]) {
 
             while (SDL_PollEvent(&e) != 0) {
                 switch (e.type) {
-                    case SDL_QUIT: {
-                        running = false;
-                    break; }
+                case SDL_QUIT: {
+                    running = false;
+                    break;
+                }
 
-                    case SDL_KEYDOWN: {
-                        emulator.setKey(e.key.keysym, 1);
-                    break; }
+                case SDL_KEYDOWN: {
+                    emulator.setKey(e.key.keysym, 1);
+                    break;
+                }
 
-                    case SDL_KEYUP: {
-                        emulator.setKey(e.key.keysym, 0);
-                    break; }
+                case SDL_KEYUP: {
+                    emulator.setKey(e.key.keysym, 0);
+                    break;
+                }
                 }
             }
-            
+
             accumulator -= TIME_STEP;
             lifetime += TIME_STEP;
         }
@@ -70,4 +76,3 @@ int main(int argc, char* args[]) {
 
     return 0;
 }
-

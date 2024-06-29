@@ -1,3 +1,0 @@
-/home/arc/Projects/C++/CHIP-8_Emulator/Debug/CMakeFiles/CHIP-8_Emulator.dir
-/home/arc/Projects/C++/CHIP-8_Emulator/Debug/CMakeFiles/edit_cache.dir
-/home/arc/Projects/C++/CHIP-8_Emulator/Debug/CMakeFiles/rebuild_cache.dir

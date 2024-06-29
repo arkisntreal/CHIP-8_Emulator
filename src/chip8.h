@@ -1,11 +1,8 @@
 #include <SDL2/SDL_events.h>
 #include <SDL2/SDL_keyboard.h>
-#include <cstdint>
-#include <iostream>
-#include <vector>
 
-#include "window.h"
 #include "font.h"
+#include "window.h"
 
 #ifndef CHIP8EMU_CHIP8_H_
 
@@ -32,8 +29,8 @@ class Chip8 {
     unsigned char delay_timer;
     unsigned char sound_timer;
 
-    //  Anytime you perform a jump or call a subroutine, store the 
-    //  program counter in the stack before proceeding. The system 
+    //  Anytime you perform a jump or call a subroutine, store the
+    //  program counter in the stack before proceeding. The system
     //  has 16 levels of stack and in order to remember which level
     //  of the stack is used, you need the stack pointer (sp)
     unsigned short stack[16];
@@ -44,7 +41,7 @@ class Chip8 {
 
     Window *window_ptr;
 
-public:
+  public:
     //  This is the screen, CHIP-8 has a total of 2048 pixels,
     //  (64 x 32). The pixel state is always 1 or 0.
     unsigned char gfx[64][32];
